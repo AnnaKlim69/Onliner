@@ -14,7 +14,7 @@ public class Browser {
     public static Browser getInstance() {
         if (instance == null) {
             driver = DriverFactory.getDriver();
-            driver.manage().timeouts().implicitlyWait(PropertyReader.getIntProperty("timeout"),
+            driver.manage().timeouts().implicitlyWait(PropertyReader.getInProperty("timeout"),
                     TimeUnit.SECONDS);//ожидание 10 сек
         } else {
             System.out.println("Driver does not instance!");//если браузер уже запущен
@@ -39,7 +39,7 @@ public class Browser {
     public static void waitForPageLoad() {//ожидание загрузки страницы
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(PropertyReader
-                .getIntProperty("page.load.timeout"))); // ожидание какого то действия
+                .getInProperty("page.load.timeout"))); // ожидание какого то действия
         wait.until(driver -> executor.executeScript("return document.readyState").equals("complete"));//каманда для системы
     }
 

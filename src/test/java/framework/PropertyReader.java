@@ -49,7 +49,7 @@ public class PropertyReader {
         properties.setProperty(key, value);
     }
 
-    public static int getIntProperty(final String key) {
+    public static int getInProperty(final String key) {
         return Integer.parseInt(getProperty(String.valueOf(key)));
     }
 }
