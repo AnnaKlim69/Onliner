@@ -1,4 +1,4 @@
-package framework;// уровень работы с браузерам
+package framework;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

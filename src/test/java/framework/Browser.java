@@ -15,9 +15,9 @@ public class Browser {
         if (instance == null) {
             driver = DriverFactory.getDriver();
             driver.manage().timeouts().implicitlyWait(PropertyReader.getInProperty("timeout"),
-                    TimeUnit.SECONDS);//ожидание 10 сек
+                    TimeUnit.SECONDS);
         } else {
-            System.out.println("Driver does not instance!");//если браузер уже запущен
+            System.out.println("Driver does not instance!");
         }
         return instance = new Browser();
     }
@@ -27,22 +27,22 @@ public class Browser {
     }
 
     public static void navigateTo(String url) {
-        driver.get(url);//делаем так, что бы небыло точного значения
+        driver.get(url);
     }
 
-    public static void quit() {//закрытие браузера и драйвера
+    public static void quit() {
         driver.quit();
-        instance = null;// для закрытия браузера чтобы не забыть закрыть браузер
+        instance = null;
         System.out.println("Browser has been closed.");
     }
 
-    public static void waitForPageLoad() {//ожидание загрузки страницы
+    public static void waitForPageLoad() {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(PropertyReader
-                .getInProperty("page.load.timeout"))); // ожидание какого то действия
-        wait.until(driver -> executor.executeScript("return document.readyState").equals("complete"));//каманда для системы
-    }
+                .getInProperty("page.load.timeout")));
+        wait.until(driver -> executor.executeScript("return document.readyState").equals("complete"));
 
+    }
     public static WebDriver getDriver() {
         return driver;
     }

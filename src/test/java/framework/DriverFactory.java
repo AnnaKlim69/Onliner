@@ -9,7 +9,7 @@ import org.openqa.selenium.safari.SafariDriver;
 public class DriverFactory {
     static WebDriver driver = null;
 
-    public static WebDriver getDriver() {// подключение браузера по ключу из конфигурации
+    public static WebDriver getDriver() {
         switch (new PropertyReader("config.properties").getProperty("browser")) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();

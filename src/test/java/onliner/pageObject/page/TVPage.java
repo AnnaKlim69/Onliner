@@ -46,6 +46,7 @@ public class TVPage extends BaseOnlinerPage {
     public void selectFromDiagonal(double diagonalFrom) {
         SELECT_FROM_DIAGONAL.selectByValue(String.valueOf(diagonalFrom));
     }
+
     public void selectToDiagonal(double diagonalTo) {
         SELECT_TO_DIAGONAL.selectByValue(String.valueOf(diagonalTo));
     }
