@@ -10,5 +10,4 @@ public class BaseOnlinerPage extends BasePage {
     public BaseOnlinerPage(By locator, String pageTitle){
         super(locator, pageTitle);
     }
-
 }
